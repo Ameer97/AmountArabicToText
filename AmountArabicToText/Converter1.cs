@@ -11,7 +11,7 @@
         static string[] millions = { "", "مليون", "مليونان", "ملايين" };
         static string[] billions = { "", "مليار", "ملياران", "مليارات" };
 
-        
+
 
         // Function to convert an amount to Arabic text
         public static string ConvertToArabic(int amount)
@@ -20,10 +20,10 @@
                 return "صفر";
 
             var total = ConvertAmount(amount);
-                if (total.StartsWith("و")) total = total.Substring(1);
+            if (total.StartsWith("و")) total = total.Substring(1);
             return total;
-                //.Replace("وو", "و")
-                ;
+            //.Replace("وو", "و")
+            ;
         }
 
         static string ConvertAmount(int amount)
@@ -50,7 +50,7 @@
 
             if (amount > 0)
             {
-                result += ConvertHundredsAndBelow(amount,amount);
+                result += ConvertHundredsAndBelow(amount, amount);
             }
 
             return result;
@@ -58,12 +58,12 @@
 
         static string ConvertBillions(int amount, int orginalAmount)
         {
-            return $"{ConvertHundredsAndBelow(amount,orginalAmount)}{billions[Form(amount)]} ";
+            return $"{ConvertHundredsAndBelow(amount, orginalAmount)}{billions[Form(amount)]} ";
         }
 
         static string ConvertMillions(int amount, int orginalAmount)
         {
-            return $"{ConvertHundredsAndBelow(amount,orginalAmount)}{millions[Form(amount)]} ";
+            return $"{ConvertHundredsAndBelow(amount, orginalAmount)}{millions[Form(amount)]} ";
         }
 
         static string ConvertThousands(int amount, int orginalAmount)
@@ -73,9 +73,9 @@
 
         static string ConvertHundredsAndBelow(int amount, int orginalAmount)
         {
-            var earseOnes = 
-                amount != orginalAmount && 
-                orginalAmount.ToString().Length % 3 == 1 && 
+            var earseOnes =
+                amount != orginalAmount &&
+                orginalAmount.ToString().Length % 3 == 1 &&
                 (Form(amount) == 1 || Form(amount) == 2);
 
             string result = "";
@@ -86,7 +86,7 @@
                 amount %= 100;
             }
 
-            if (amount >= 10 && amount <20)
+            if (amount >= 10 && amount < 20)
             {
                 result += $"و{teens[amount - 10]} ";
                 amount = 0;
@@ -116,7 +116,6 @@
                 1 => 1,
                 2 => 2,
                 _ => 3
-
             };
         }
     }
