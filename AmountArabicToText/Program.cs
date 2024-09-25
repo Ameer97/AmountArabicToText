@@ -17,7 +17,12 @@
             result += 1 + "\n" + Converter1.ConvertToArabic(1) + "\n\n\n";
             result += 21 + "\n" + Converter1.ConvertToArabic(21) + "\n\n\n";
             result += 2147483647 + "\n" + Converter1.ConvertToArabic(2147483647) + "\n\n\n";
+            result += 0 + "\n" + Converter1.ConvertToArabic(0) + "\n\n\n";
+            result += 1000 + "\n" + Converter1.ConvertToArabic(1000) + "\n\n\n";
             result += 2000 + "\n" + Converter1.ConvertToArabic(2000) + "\n\n\n";
+            result += 3000 + "\n" + Converter1.ConvertToArabic(3000) + "\n\n\n";
+            result += 4000 + "\n" + Converter1.ConvertToArabic(4000) + "\n\n\n";
+            result += 5000 + "\n" + Converter1.ConvertToArabic(5000) + "\n\n\n";
             Console.ReadKey();
         }
     }
